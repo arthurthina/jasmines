@@ -10,7 +10,7 @@ scene_delaunay <- function(seed = use_seed(1), n = 20, grain = 50) {
 
 	# create the delaunay tiling
 	points <- spatstat.core::runifpoint(n)
-	del <- spatstat.core::delaunay(points)
+	del <- spatstat.geom::delaunay(points)
 	del <- as.data.frame(del)
 	names(del) <- c("x", "y", "id")
 	del$id <- gsub("Tile ", "", del$id)
